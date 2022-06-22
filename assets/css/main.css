@@ -1,0 +1,6 @@
+
+body {
+    background-color: #191649;
+    background-size: 150%;
+    animation: bgimage 180s ease infinite;
+}
