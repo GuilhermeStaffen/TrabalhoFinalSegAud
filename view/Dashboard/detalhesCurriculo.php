@@ -70,13 +70,6 @@ $rs = $stmt->fetch(PDO::FETCH_OBJ);
                     </div>
                 </div>
 
-                <div class="panel-footer">
-                    <div class="clearfix">
-                        <div class="pull-right">
-                            <button type="submit" class="btn btn-primary" /><span class="glyphicon glyphicon-ok"></span>Salvar</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
