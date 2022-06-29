@@ -14,18 +14,13 @@
 
 <body>
     <div class="container">
-        <?php
-        if (isset($_GET['return'])) {
-            echo '<script> window.alert("' . $_GET["return"] . '") </script>';
-        }
-        ?>
         <header class="row">
             <br />
         </header>
         <article>
 
             <div class="col-md-6 col-md-offset-3" style="margin-top: 10%;">
-                <form action="../../controller/Login/processaLogin.php" method="POST" name="formLogin" class="form-horizontal">
+                <form action="../../controller/Login/processaLogin.php?r=<?= md5(uniqid(mt_rand(), true)) ?>" method="POST" name="formLogin" class="form-horizontal">
                     <div class="panel panel-default" style="border: none; box-shadow: 7px 7px 13px #364a6f;">
                         <div class="panel-heading">
                             <span class="panel-title">Login</span>

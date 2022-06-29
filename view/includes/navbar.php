@@ -8,17 +8,17 @@ $is_admin = $_SESSION["is_admin"];
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="../Dashboard/main.php">Currículos</a>
+                <a class="navbar-brand" href="../Dashboard/main.php?r=<?= md5(uniqid(mt_rand(), true)) ?>">Currículos</a>
             </div>
             <ul class="nav navbar-nav nav-pills">
-                <li><a href="../Dashboard/main.php">Início</a></li>
+                <li><a href="../Dashboard/main.php?r=<?= md5(uniqid(mt_rand(), true)) ?>">Início</a></li>
                 <?php
                 if ($is_admin == 1) {
                 ?>
-                    <li><a href="../Dashboard/listaCurriculos.php">Ver currículos</a></li>
+                    <li><a href="../Dashboard/listaCurriculos.php?r=<?= md5(uniqid(mt_rand(), true)) ?>">Ver currículos</a></li>
                 <?php
                 } ?>
-                <li><a href="../../controller/Logout/processaLogout.php">Sair</a></li>
+                <li><a href="../../controller/Logout/processaLogout.php?r=<?= md5(uniqid(mt_rand(), true)) ?>">Sair</a></li>
             </ul>
 
         </div>

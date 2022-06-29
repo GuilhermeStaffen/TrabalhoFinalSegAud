@@ -14,9 +14,9 @@ try {
         $_SESSION["name"] = $return[3];
         $_SESSION["email"] = $return[4];
         $_SESSION['token'] = md5(uniqid(mt_rand(), true));
-        header('Location: ../../view/Dashboard/main.php');
+        header('Location: ../../view/Dashboard/main.php?r='. md5(uniqid(mt_rand(), true)) .'');
     } else {
-        header('Location: ../../view/Login/login.php?return=Acesso Negado');
+        header('Location: ../../view/Login/login.php?r='. md5(uniqid(mt_rand(), true)) .'');
     }
 } catch (PDOException $erro) {
     echo "<p>Erro: " . $erro->getMessage() . " | Contate o administrador</p>";

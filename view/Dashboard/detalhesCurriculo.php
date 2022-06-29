@@ -4,7 +4,7 @@ include_once '../../model/connect.php';
 include_once '../../model/curriculoRequests.php';
 $is_admin = $_SESSION["is_admin"];
 if ($is_admin != 1) {
-    header('Location: ../Dashboard/main.php?');
+    header('Location: ../Dashboard/main.php?r='.md5(uniqid(mt_rand(), true)) .'');
 }
 $resumeId = $token = filter_input(INPUT_GET, 'resumeId', FILTER_UNSAFE_RAW);
 $stmt = SearchResume($conexao, $resumeId);

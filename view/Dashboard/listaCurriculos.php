@@ -3,7 +3,7 @@ require_once '../../controller/Login/validaSessao.php';
 include_once '../../model/connect.php';
 $is_admin = $_SESSION["is_admin"];
 if ($is_admin != 1) {
-    header('Location: ../Dashboard/main.php?');
+    header('Location: ../Dashboard/main.php?r='.md5(uniqid(mt_rand(), true)) .'');
 }
 ?>
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ if ($is_admin != 1) {
                         <td><?php echo htmlentities($rs->name); ?></td>
                         <td><?php echo htmlentities($rs->email); ?></td>
                         <td>
-                            <button type="button" class="btn btn-default" aria-label="Left Align" title="Editar" onclick="window.location.href = '<?php echo "../Dashboard/detalhesCurriculo.php?resumeId=" . $rs->resume_id; ?>'">
+                            <button type="button" class="btn btn-default" aria-label="Left Align" title="Editar" onclick="window.location.href = '<?php echo "../Dashboard/detalhesCurriculo.php?r=".md5(uniqid(mt_rand(), true)) ."&resumeId=" . $rs->resume_id; ?>'">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                             </button>
                         </td>

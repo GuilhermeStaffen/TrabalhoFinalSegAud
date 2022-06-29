@@ -1,6 +1,7 @@
 <?php
 require_once '../../controller/Login/validaSessao.php';
 include_once '../../model/connect.php';
+$_SESSION['token'] = md5(uniqid(mt_rand(), true));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,7 +25,7 @@ include_once '../../model/connect.php';
         <h3> Olá, seja bem vindo <?= $_SESSION['name']; ?></h3>
 
         <div class="row">
-            <form action="../../controller/Curriculos/processaInclusaoCurriculo.php" method="POST" class="form-horizontal">
+            <form action="../../controller/Curriculos/processaInclusaoCurriculo.php?r=<?= md5(uniqid(mt_rand(), true)) ?>" method="POST" class="form-horizontal">
                 <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?? '' ?>">
                 <div class="panel panel-default">
                     <div class="panel-heading">
